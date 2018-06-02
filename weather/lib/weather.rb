@@ -1,5 +1,6 @@
-require "weather/version"
+require_relative "weather/version"
+require_relative "../lib/weather/cli"
 
 module Weather
-  # Your code goes here...
+
 end
