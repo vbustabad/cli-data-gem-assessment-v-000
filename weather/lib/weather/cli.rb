@@ -4,16 +4,16 @@ class Weather::Cli
     new.start
   end
 
-  def list_of_major_cities
+  def list
     puts " "
     puts "World Temperatures – Weather Around The World"
-    Weather::WeatherConditions.all.each.with_index(1) do |city, index|
+    Weather::WeatherConditions.all_cities.each.with_index(1) do |city, index|
       puts "#{index}.  #{city}"
     end
   end
 
   def start
-    list_of_major_cities
+    list
     puts " "
     puts "Which location would you like to check the weather for? Please enter the number corresponding to the particular city."
     input = gets.strip.to_i

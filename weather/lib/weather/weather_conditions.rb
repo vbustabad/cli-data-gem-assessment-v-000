@@ -1,3 +1,5 @@
+require 'pry'
+
 class Weather::WeatherConditions
   attr_accessor :fahrenheit_temperature, :feels_like_temperature, :celsius_temperature, :current_time, :wind, :visibility, :pressure, :humidity, :dew_point
 
@@ -14,17 +16,17 @@ class Weather::WeatherConditions
     end
 
     def fahrenheit_temperature
-    	@fahrenheit_temperature = doc.css("div.h2").first.children.last.to_s
+    	doc.css("div.h2").first.children.last.to_s
     end
 
-    # def feels_like_temperature
-    # 	@feels_like_temperature = scrape from website
-    # end
+    def feels_like_temperature
+    	doc.css("p")[1].children[0].to_s.gsub("Feels Like: ", "")
+    end
 
-    # def celsius_temperature
-    # 	@celsius_temperature = @fahrenheit_temperature – 32 * 5/9
-    # end
-    #
+    def celsius_temperature
+     	@celsius_temperature = (fahrenheit_temperature.gsub("°F", "").to_i - 32) * 5/9
+    end
+
     # def wind
     # 	@wind ||= scrape from website
     # end
