@@ -1,0 +1,4 @@
+class TopBeachToursinNorthAmerica::Scraper
+
+
+end 

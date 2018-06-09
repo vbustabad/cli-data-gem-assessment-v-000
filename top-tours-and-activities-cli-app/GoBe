@@ -1,0 +1,16 @@
+class TopBeachToursinNorthAmerica::Tours
+
+  attr_accessor :name, :price, :duration, :location, :description
+
+  @@all = []
+
+  def initialize
+    @name = name
+	  @price = price
+    @duration = duration
+    @@all << self
+  end
+
+  def self.all
+    @@all
+  end
