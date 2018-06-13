@@ -7,9 +7,20 @@ class Weather::Cli
   def list
     puts " "
     puts "World Temperatures – Weather Around The World"
-    Weather::WeatherConditions.all_cities.each.with_index(1) do |city, index|
-      puts "#{index}.  #{city}"
+    Weather::Scraper.new.scrape_from_index_page.each.with_index(1) do |city, index|
+      puts "#{index}.  #{city[:city]}"
     end
+  end
+
+  def print_weather_information(input)
+    city_hash = Weather::Scraper.new.scrape_from_index_page[input - 1]
+    city_name = city_hash[:city]
+    url = city_hash[:url]
+    city = Weather::WeatherConditions.new(city_name, url)
+    puts "Weather Conditions for #{city_name}"
+    puts ""
+    puts "Fahrenheit Temperature: #{city.fahrenheit_temperature}"
+    #fahrenheit_temperature, :feels_like_temperature, :celsius_temperature, :current_time, :wind, :visibility, :pressure, :humidity, :dew_point
   end
 
   def start
