@@ -18,9 +18,16 @@ class Weather::Cli
     url = city_hash[:url]
     city = Weather::WeatherConditions.new(city_name, url)
     puts "Weather Conditions for #{city_name}"
-    puts ""
+    puts " "
     puts "Fahrenheit Temperature: #{city.fahrenheit_temperature}"
-    #fahrenheit_temperature, :feels_like_temperature, :celsius_temperature, :current_time, :wind, :visibility, :pressure, :humidity, :dew_point
+    puts "Feels Like Temperature: #{city.feels_like_temperature}"
+    puts "Celsius Temperature: #{city.celsius_temperature}"
+    puts "Current Time: #{city.current_time}"
+    puts "Wind: #{city.wind}"
+    puts "Visibility: #{city.visibility}"
+    puts "Pressure: #{city.pressure}"
+    puts "Humidity: #{city.humidity}"
+    puts "Dew Point: #{city.dew_point}"
   end
 
   def start
@@ -34,21 +41,24 @@ class Weather::Cli
     puts " "
     puts "Would you like to view the weather for another city? Enter yes or no."
 
-    while input != exit
-      input = gets.strip.downcase
+    user_options
+  end
 
-      case input
-      when "yes"
-        start
-      when "no"
-        puts " "
-        puts "Thank you for using TimeandDate.com! We hope to see you again soon."
-        exit
-      else
-        puts " "
-        puts "The selection that was entered is not valid. Please enter yes or no if you would like to view the weather for another city."
-        start
-      end
+  def user_options
+
+    input = gets.strip.downcase
+
+    case input
+    when "yes"
+      start
+    when "no"
+      puts " "
+      puts "Thank you for using TimeandDate.com! We hope to see you again soon."
+      exit
+    else
+      puts " "
+      puts "The selection that was entered is not valid. Please enter yes or no if you would like to view the weather for another city."
+      user_options
     end
   end
 end
