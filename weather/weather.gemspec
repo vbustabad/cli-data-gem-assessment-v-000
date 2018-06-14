@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Veronica Bustabad'"]
   spec.email         = ["'vbustabad@gmail.com'"]
 
-  spec.summary       = %q{Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{Write a longer description or delete this line.}
+  spec.summary       = %q{A gem for checking the weather conditions for a city based on the list of major cities around the world listed on the TimeandDate.com website.}
+  spec.description   = %q{A gem for checking various weather conditions, including fahrenheit, feels like, and celsius temperature, current time, wind, visibility, pressure, humidity, and dew point for a major city listed on the TimeandDate.com website.}
   spec.homepage      = "https://github.com/vbustabad/cli-data-gem-assessment-v-000"
 
   spec.license       = "MIT"
