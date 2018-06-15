@@ -7,6 +7,7 @@ class Weather::Cli
   def list
     puts " "
     puts "World Temperatures – Weather Around The World"
+    puts " "
     Weather::Scraper.new.scrape_from_index_page.each.with_index(1) do |city, index|
       puts "#{index}.  #{city[:city]}"
     end

@@ -1,8 +1,6 @@
 # Weather
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/weather`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Weather is a Command Line Interface (CLI) application that scrapes data from TimeandDate.com in order to provide the current weather conditions for a city that is chosen by the user. The user is presented with a list of approximately 140 major cities from around the world that is listed on the Weather section for the TimeandDate.com website. The user will make a selection for the city that they would like to view the weather for. The application will then supply the detailed weather information for the particular city, including the fahrenheit, feels like and celsius temperature, current time, wind, visibility, pressure, humidity and dew point. Lastly, the user will have the option to view the weather conditions for other cities or exit the program.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Start the application by entering "./bin/weather". Follow the instructions that are provided in order to make a selection and view the weather conditions for a particular city. Enter 'list' in order to view the selection of major cities around the world. Choose a city by entering the number that corresponds to the particular city. Enter 'yes' if you would like to view the weather conditions for another city. Enter 'no' if you would like to exit the program.
 
 ## Development
 
