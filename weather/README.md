@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-Start the application by entering "./bin/weather". Follow the instructions that are provided in order to make a selection and view the weather conditions for a particular city. Enter 'list' in order to view the selection of major cities around the world. Choose a city by entering the number that corresponds to the particular city. Enter 'yes' if you would like to view the weather conditions for another city. Enter 'no' if you would like to exit the program.
+Start the application by entering "weather/bin/weather". Follow the instructions that are provided in order to make a selection and view the weather conditions for a particular city. Enter 'list' in order to view the selection of major cities around the world. Choose a city by entering the number that corresponds to the particular city. Enter 'yes' if you would like to view the weather conditions for another city. Enter 'no' if you would like to exit the program.
 
 ## Development
 

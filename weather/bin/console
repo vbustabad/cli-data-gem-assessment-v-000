@@ -10,5 +10,8 @@ require_relative "../lib/weather"
 # require "pry"
 # Pry.start
 
+parisweatherconditions = Weather::WeatherConditions.new("paris", "/weather/france/paris")
+miamiweatherconditions = Weather::WeatherConditions.new("miami", "/weather/usa/miami")
+
 require "irb"
 IRB.start(__FILE__)

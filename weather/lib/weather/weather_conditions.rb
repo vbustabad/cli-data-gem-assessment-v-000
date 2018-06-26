@@ -1,18 +1,21 @@
 require 'pry'
 
 class Weather::WeatherConditions
-  attr_accessor :fahrenheit_temperature, :feels_like_temperature, :celsius_temperature, :current_time, :wind, :visibility, :pressure, :humidity, :dew_point
+  attr_accessor :city, :fahrenheit_temperature, :feels_like_temperature, :celsius_temperature, :current_time, :wind, :visibility, :pressure, :humidity, :dew_point
 
-  @@all_cities = []
+  @@all = []
+  # create an @@all class variable and class getter method for it
+  # every instacne of WeatherConditions class shouldl be saved to @@@all upon instantiation
+  # add a class finder mehod self.find_all_by_city(city) that returns a collection of all WeatherConditinos objects for a particular city
 
     def initialize(city, url)
       @city = city
       @url = url
-      @@all_cities << @city
+      @@all << self
     end
 
-    def self.all_cities
-      @@all_cities
+    def self.all
+      @@all
     end
 
     def fahrenheit_temperature
@@ -52,10 +55,25 @@ class Weather::WeatherConditions
     end
 
     def doc
-      @doc ||= Nokogiri::HTML(open("https://www.timeanddate.com#{@url}"))
+      @doc ||= scrape
+    end
+
+    def scrape
+      puts "¨SCRAPING ************** #{@url}"
+      Nokogiri::HTML(open("https://www.timeanddate.com#{@url}"))
+    end
+
+    def self.find_all_by_city(city)
+      self.all.select do |city_instance|
+        if city_instance.city == city
+          city_instance
+        else
+          false
+        end
+      end
     end
 
     def self.find_by_selection(input)
-      self.all(input)
+      self.all(input - 1)
     end
 end
