@@ -1,7 +1,7 @@
 class Weather::Scraper
 
   def get_page
-  	Nokogiri::HTML(open("https://www.timeanddate.com/weather/"))
+  	@@general_list ||= Nokogiri::HTML(open("https://www.timeanddate.com/weather/"))
   end
 
   def scrape_from_index_page
